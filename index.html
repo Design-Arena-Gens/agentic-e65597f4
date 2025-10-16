@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قابلیت‌های ایجنت</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .capability-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .capability-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .capability-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .capability-title {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .capability-description {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .demo-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .demo-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-align: center;
+        }
+
+        .demo-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1em;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-family: inherit;
+        }
+
+        .demo-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            font-weight: bold;
+        }
+
+        .demo-button:hover {
+            transform: scale(1.02);
+        }
+
+        .demo-button:active {
+            transform: scale(0.98);
+        }
+
+        .demo-output {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            min-height: 100px;
+            display: none;
+        }
+
+        .demo-output.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            padding: 20px;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 ایجنت هوش مصنوعی</h1>
+            <p class="subtitle">دستیار هوشمند شما برای انجام کارهای مختلف</p>
+        </header>
+
+        <div class="capabilities-grid">
+            <div class="capability-card">
+                <span class="capability-icon">💻</span>
+                <h3 class="capability-title">برنامه‌نویسی</h3>
+                <p class="capability-description">نوشتن، تحلیل و اصلاح کدهای برنامه‌نویسی در زبان‌های مختلف مانند Python، JavaScript، Java و بسیاری دیگر</p>
+            </div>
+
+            <div class="capability-card">
+                <span class="capability-icon">🔍</span>
+                <h3 class="capability-title">تحلیل و پژوهش</h3>
+                <p class="capability-description">جستجو در اینترنت، تحلیل اطلاعات، خلاصه‌سازی متون و ارائه پاسخ‌های دقیق به سوالات شما</p>
+            </div>
+
+            <div class="capability-card">
+                <span class="capability-icon">📝</span>
+                <h3 class="capability-title">نوشتن محتوا</h3>
+                <p class="capability-description">تولید متن، مقاله، ایمیل، محتوای تبلیغاتی و هر نوع نوشته‌ای که نیاز داشته باشید</p>
+            </div>
+
+            <div class="capability-card">
+                <span class="capability-icon">🎨</span>
+                <h3 class="capability-title">طراحی و خلاقیت</h3>
+                <p class="capability-description">کمک به ایده‌پردازی، طراحی رابط کاربری، ساخت وب‌سایت و پروژه‌های خلاقانه</p>
+            </div>
+
+            <div class="capability-card">
+                <span class="capability-icon">🌐</span>
+                <h3 class="capability-title">ترجمه</h3>
+                <p class="capability-description">ترجمه متون بین زبان‌های مختلف با دقت بالا و حفظ معنی و مفهوم اصلی</p>
+            </div>
+
+            <div class="capability-card">
+                <span class="capability-icon">📊</span>
+                <h3 class="capability-title">تحلیل داده</h3>
+                <p class="capability-description">تجزیه و تحلیل داده‌ها، ایجاد گزارش و ارائه بینش‌های قابل استفاده از اطلاعات</p>
+            </div>
+
+            <div class="capability-card">
+                <span class="capability-icon">🎓</span>
+                <h3 class="capability-title">آموزش</h3>
+                <p class="capability-description">توضیح مفاهیم پیچیده، کمک به حل تمرین‌ها و یادگیری موضوعات جدید</p>
+            </div>
+
+            <div class="capability-card">
+                <span class="capability-icon">🛠️</span>
+                <h3 class="capability-title">اتوماسیون</h3>
+                <p class="capability-description">خودکارسازی وظایف تکراری، نوشتن اسکریپت و بهبود فرآیندهای کاری</p>
+            </div>
+
+            <div class="capability-card">
+                <span class="capability-icon">💡</span>
+                <h3 class="capability-title">مشاوره</h3>
+                <p class="capability-description">ارائه راهنمایی و مشاوره در زمینه‌های مختلف کسب‌وکار، فناوری و زندگی روزمره</p>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="demo-title">امتحان کنید!</h2>
+            <input type="text" class="demo-input" id="userInput" placeholder="سوال خود را اینجا بنویسید...">
+            <button class="demo-button" onclick="processInput()">ارسال سوال</button>
+            <div class="demo-output" id="output"></div>
+        </div>
+
+        <div class="footer">
+            <p>🚀 ایجنت هوش مصنوعی آماده کمک به شما است</p>
+            <p>فقط کافی است بپرسید!</p>
+        </div>
+    </div>
+
+    <script>
+        const responses = {
+            'سلام': 'سلام! چطور می‌تونم کمکتون کنم؟',
+            'کد': 'من می‌تونم به شما در نوشتن کد کمک کنم. چه زبان برنامه‌نویسی مد نظرتونه؟',
+            'ترجمه': 'برای ترجمه، متن مورد نظرتون رو بفرستید و بگید از چه زبانی به چه زبانی باید ترجمه بشه.',
+            'سایت': 'می‌تونم براتون یک وب‌سایت کامل طراحی و پیاده‌سازی کنم. چه نوع سایتی می‌خواید؟',
+            'آموزش': 'کدوم موضوع رو دوست دارید یاد بگیرید؟ من می‌تونم به صورت ساده و گام به گام توضیح بدم.',
+            'داده': 'برای تحلیل داده، اطلاعات رو برام بفرستید تا براتون تجزیه و تحلیل کنم.',
+            'default': 'سوال جالبیه! من می‌تونم در زمینه‌های مختلفی مثل برنامه‌نویسی، نوشتن محتوا، تحلیل داده، ترجمه و خیلی چیزهای دیگه کمکتون کنم. چه کاری می‌تونم براتون انجام بدم؟'
+        };
+
+        function processInput() {
+            const input = document.getElementById('userInput').value.trim();
+            const output = document.getElementById('output');
+
+            if (!input) {
+                output.innerHTML = '<p style="color: #d32f2f;">لطفاً یک سوال وارد کنید.</p>';
+                output.classList.add('active');
+                return;
+            }
+
+            let response = responses['default'];
+
+            for (let key in responses) {
+                if (input.includes(key)) {
+                    response = responses[key];
+                    break;
+                }
+            }
+
+            output.innerHTML = `
+                <p style="margin-bottom: 10px;"><strong>سوال شما:</strong> ${input}</p>
+                <p><strong>پاسخ ایجنت:</strong> ${response}</p>
+            `;
+            output.classList.add('active');
+
+            document.getElementById('userInput').value = '';
+        }
+
+        document.getElementById('userInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                processInput();
+            }
+        });
+
+        const cards = document.querySelectorAll('.capability-card');
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                this.style.color = 'white';
+                const title = this.querySelector('.capability-title');
+                const desc = this.querySelector('.capability-description');
+                title.style.color = 'white';
+                desc.style.color = 'white';
+
+                setTimeout(() => {
+                    this.style.background = 'white';
+                    this.style.color = '#333';
+                    title.style.color = '#667eea';
+                    desc.style.color = '#555';
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
